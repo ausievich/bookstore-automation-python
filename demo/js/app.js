@@ -19,7 +19,7 @@ const BookstoreApp = {
       ...options,
       headers: { ...headers, ...(options.headers || {}) },
     });
-    if (res.status === 401) {
+    if (res.status === 401 && token) {
       this.clearToken();
       window.location.href = '/login.html';
       return;
