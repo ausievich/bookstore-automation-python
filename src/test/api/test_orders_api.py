@@ -8,7 +8,7 @@ from src.main.api.models.order import PaymentInfo, ShippingInfo
 from src.main.common.annotations import allure_metadata
 
 SHIPPING = ShippingInfo(name="Test User", address="123 Main St", city="Testville", zip="12345")
-PAYMENT = PaymentInfo(card_last4="4242")
+PAYMENT = PaymentInfo(cardLast4="4242")
 
 
 def _setup_cart(cart_api: CartController) -> None:

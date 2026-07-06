@@ -18,7 +18,7 @@ class BookBuilder:
         return self
 
     # alias kept for JS parity
-    withTitle = with_title  # type: ignore[assignment]
+    withTitle = with_title
 
     def with_author(self, author: str) -> "BookBuilder":
         self._author = author

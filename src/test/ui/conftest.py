@@ -1,15 +1,17 @@
 """UI-specific conftest: browser state reset before each UI test."""
 
+from collections.abc import Generator
+
 import pytest
 from playwright.sync_api import Page
 
 
 @pytest.fixture(autouse=True)
-def reset_browser_state(page: Page, base_url: str) -> None:  # type: ignore[return]
+def reset_browser_state(page: Page, base_url: str) -> Generator[None, None, None]:
     """Clear localStorage before every UI test."""
     page.goto(f"{base_url}/login.html")
     page.evaluate("localStorage.clear()")
-    yield  # type: ignore[misc]
+    yield
 
 
 @pytest.fixture

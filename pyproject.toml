@@ -48,6 +48,10 @@ python_version = "3.12"
 strict = true
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = "src.test.*"
+disable_error_code = ["no-untyped-call"]
+
 [tool.taskipy.tasks]
 server      = "uvicorn mock_server.server:app --host 0.0.0.0 --port 3000 --reload"
 test        = "pytest"

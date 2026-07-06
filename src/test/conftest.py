@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Generator
+
 import pytest
 from playwright.sync_api import Page
 
@@ -20,7 +22,7 @@ from src.main.common.constants.test_users import TestUsers
 
 
 @pytest.fixture(scope="session")
-def base_url() -> str:  # type: ignore[override]
+def base_url() -> str:
     return Environment.base_url
 
 
@@ -30,9 +32,9 @@ def base_url() -> str:  # type: ignore[override]
 
 
 @pytest.fixture
-def http_client(base_url: str) -> HttpClient:  # type: ignore[return]
+def http_client(base_url: str) -> Generator[HttpClient, None, None]:
     client = HttpClient(base_url)
-    yield client  # type: ignore[misc]
+    yield client
     client.close()
 
 
@@ -77,11 +79,11 @@ def orders_api(http_client: HttpClient) -> OrdersController:
 
 
 @pytest.fixture
-def auth_token(http_client: HttpClient, api_reset: None) -> str:  # type: ignore[return]
+def auth_token(http_client: HttpClient, api_reset: None) -> Generator[str, None, None]:
     flow = AuthFlow(http_client)
     token = flow.login_as_default_user()
     http_client.set_auth_token(token)
-    yield token  # type: ignore[misc]
+    yield token
     http_client.set_auth_token(None)
 
 
