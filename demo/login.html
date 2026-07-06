@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore – Login</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main>
+    <div class="card" data-testid="login-card">
+      <h1 data-testid="login-heading">Sign In</h1>
+      <form id="login-form" novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            data-testid="email-input"
+            placeholder="you@example.com"
+            autocomplete="email"
+          >
+          <span class="validation hidden" data-testid="email-validation">Email is required</span>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            data-testid="password-input"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          >
+          <span class="validation hidden" data-testid="password-validation">Password is required</span>
+        </div>
+        <div class="error hidden" data-testid="login-error"></div>
+        <button type="submit" data-testid="login-submit">Sign In</button>
+      </form>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script>initLoginPage();</script>
+</body>
+</html>

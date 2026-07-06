@@ -1,0 +1,61 @@
+[project]
+name = "bookstore-automation-python"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright",
+    "pytest",
+    "pytest-playwright",
+    "allure-pytest",
+    "httpx",
+    "pydantic",
+    "fastapi",
+    "uvicorn[standard]",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "mypy",
+    "taskipy",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "mock_server*"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/test"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--alluredir=allure-results"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.taskipy.tasks]
+server      = "uvicorn mock_server.server:app --host 0.0.0.0 --port 3000 --reload"
+test        = "pytest"
+test-api    = "pytest src/test/api"
+test-ui     = "pytest src/test/ui"
+lint        = "ruff check . && ruff format --check ."
+typecheck   = "mypy src"
+allure-install = "python scripts/allure_cli.py install"
+allure-gen  = "python scripts/allure_cli.py generate"
+allure-open = "python scripts/allure_cli.py open"
+report      = "task test && task allure-gen && task allure-open"

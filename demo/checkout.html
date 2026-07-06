@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore – Checkout</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bookstore</h1>
+    <nav>
+      <a href="/catalog.html">Catalog</a>
+      <a href="/cart.html">Cart (<span data-testid="cart-counter">0</span>)</a>
+      <a href="/orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Checkout</h2>
+
+    <!-- Step indicators -->
+    <div class="steps">
+      <div class="step active" data-testid="step-shipping">1. Shipping</div>
+      <div class="step" data-testid="step-payment">2. Payment</div>
+      <div class="step" data-testid="step-review">3. Review</div>
+    </div>
+
+    <!-- Shipping section -->
+    <div class="section-panel" data-testid="shipping-section">
+      <h3>Shipping Information</h3>
+      <form id="shipping-form" novalidate>
+        <div>
+          <label>Full Name</label>
+          <input type="text" data-testid="ship-name" placeholder="Jane Doe">
+        </div>
+        <div>
+          <label>Address</label>
+          <input type="text" data-testid="ship-address" placeholder="123 Main St">
+        </div>
+        <div>
+          <label>City</label>
+          <input type="text" data-testid="ship-city" placeholder="Springfield">
+        </div>
+        <div>
+          <label>ZIP Code</label>
+          <input type="text" data-testid="ship-zip" placeholder="12345">
+        </div>
+        <button type="button" data-testid="shipping-next">Continue to Payment</button>
+      </form>
+    </div>
+
+    <!-- Payment section -->
+    <div class="section-panel hidden" data-testid="payment-section">
+      <h3>Payment Details</h3>
+      <form id="payment-form" novalidate>
+        <div>
+          <label>Card Number</label>
+          <input type="text" data-testid="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div>
+          <label>Last 4 Digits (for confirmation)</label>
+          <input type="text" data-testid="card-last4" placeholder="3456" maxlength="4">
+        </div>
+        <button type="button" data-testid="payment-next">Review Order</button>
+      </form>
+    </div>
+
+    <!-- Review section -->
+    <div class="section-panel hidden" data-testid="review-section">
+      <h3>Order Review</h3>
+      <div data-testid="order-summary"></div>
+      <button type="button" data-testid="confirm-order" style="margin-top:1rem">Place Order</button>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script>initCheckoutPage();</script>
+</body>
+</html>

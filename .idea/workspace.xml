@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ddd17a30-37a0-431e-93d6-0b7aa1aba0f7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation/main/api/flows/auth_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/automation/main/api/flows/auth_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation/main/ui/steps/catalog_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/automation/main/ui/steps/catalog_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation/test/automated_testcases/ui/test_visual_regression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation/test/test_base/visual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore_automation_python.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore_automation_python.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore_automation_python.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore_automation_python.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore_automation_python.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore_automation_python.egg-info/entry_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore_automation_python.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore_automation_python.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mock_server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/mock_server/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mock_server/store.py" beforeDir="false" afterPath="$PROJECT_DIR$/mock_server/store.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/docker_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-uv-scripts.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="2438" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ausievich&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ausievich/bookstore-automation-python&quot;,
+    &quot;accountId&quot;: &quot;79aa7e5b-ca77-4898-9753-fbf3289df745&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.465330928119328" />
+      <entry key="MS500" value="2.92466788829148" />
+      <entry key="S2" value="5.035059091631633" />
+      <entry key="S5" value="6.054360565290508" />
+      <entry key="S10" value="6.49424983664025" />
+      <entry key="S30" value="6.823373133770211" />
+      <entry key="S60" value="6.910631605953676" />
+      <entry key="M2" value="6.955048178866977" />
+      <entry key="M5" value="6.981954537236833" />
+      <entry key="M10" value="6.990966437211214" />
+      <entry key="M15" value="6.9939752146794545" />
+      <entry key="M30" value="6.996986401487475" />
+      <entry key="H1" value="6.998492899132777" />
+      <entry key="H2" value="6.9992463741451525" />
+      <entry key="H4" value="6.9996231682149554" />
+      <entry key="D1" value="6.999937192083181" />
+      <entry key="W1" value="6.999991027376306" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.4027210687423626" />
+      <entry key="MS500" value="2.884665588066012" />
+      <entry key="S2" value="5.001201024150448" />
+      <entry key="S5" value="6.034491235712148" />
+      <entry key="S10" value="6.482817458963892" />
+      <entry key="S30" value="6.819173661473905" />
+      <entry key="S60" value="6.90847932692382" />
+      <entry key="M2" value="6.953958587379247" />
+      <entry key="M5" value="6.98151543083125" />
+      <entry key="M10" value="6.990746335558938" />
+      <entry key="M15" value="6.993828358107775" />
+      <entry key="M30" value="6.996912912068305" />
+      <entry key="H1" value="6.998456139127677" />
+      <entry key="H2" value="6.999227990317199" />
+      <entry key="H4" value="6.999613975344437" />
+      <entry key="D1" value="6.999935659805226" />
+      <entry key="W1" value="6.999990808476201" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Fo9ffQdhi2UVdh8MQ3ynswdQ4C" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.test_book_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_books_crud.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ausievich/WebstormProjects/bookstore-automation-python&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.test_books_crud">
+    <configuration name="test_book_search" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bookstore-automation-python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automation/test/automated_testcases/ui" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/automation/test/automated_testcases/ui/test_book_search.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_books_crud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bookstore-automation-python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.14 (PyCharmMiscProject)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/api" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test/api/test_books_crud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_books_crud" />
+        <item itemvalue="Python.test_book_search" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-245168a56dbd-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.25134.203" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ddd17a30-37a0-431e-93d6-0b7aa1aba0f7" name="Changes" comment="" />
+      <created>1782730660109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782730660109</updated>
+      <workItem from="1782730661291" duration="2478000" />
+      <workItem from="1782749941727" duration="7639000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/bookstore_automation_python$test_books_crud.coverage" NAME="test_books_crud Coverage Results" MODIFIED="1783374731614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/api" />
+    <SUITE FILE_PATH="coverage/bookstore_automation_python$test_book_search.coverage" NAME="test_book_search Coverage Results" MODIFIED="1782750015568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automation/test/automated_testcases/ui" />
+  </component>
+</project>

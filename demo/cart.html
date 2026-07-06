@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore – Cart</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bookstore</h1>
+    <nav>
+      <a href="/catalog.html" data-testid="nav-catalog">Catalog</a>
+      <a href="/cart.html" data-testid="nav-cart">
+        Cart (<span data-testid="cart-counter">0</span>)
+      </a>
+      <a href="/orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Your Cart</h2>
+    <p class="hidden" data-testid="empty-cart-message">Your cart is empty. <a href="/catalog.html">Browse books</a>.</p>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody data-testid="cart-items"></tbody>
+    </table>
+    <div class="cart-summary">
+      Total: <span data-testid="cart-subtotal">$0.00</span>
+    </div>
+    <a href="/checkout.html" data-testid="checkout-link">
+      <button>Proceed to Checkout</button>
+    </a>
+  </main>
+  <script src="/js/app.js"></script>
+  <script>initCartPage();</script>
+</body>
+</html>

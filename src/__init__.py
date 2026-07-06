@@ -1,0 +1,1 @@
+"""Bookstore automation source package."""

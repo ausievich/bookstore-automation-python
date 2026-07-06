@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+allure-results/
+allure-report/
+.env
+node_modules/
+dist/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.venv/
+venv/
+.allure-cli/

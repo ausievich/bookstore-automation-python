@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore – Order Placed!</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main>
+    <div class="success-card">
+      <div class="checkmark">✅</div>
+      <h1>Order Placed!</h1>
+      <p>Thank you for your purchase.</p>
+      <p class="order-id">Order ID: <span id="order-id">—</span></p>
+      <a href="/catalog.html"><button style="margin-top:1rem">Continue Shopping</button></a>
+      <a href="/orders.html"><button class="secondary" style="margin-top:0.5rem">View My Orders</button></a>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script>initOrderSuccessPage();</script>
+</body>
+</html>
