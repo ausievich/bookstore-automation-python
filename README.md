@@ -2,6 +2,8 @@
 
 Playwright + Python test automation for the **Online Bookstore** mock application.
 
+**Allure Report (CI):** https://ausievich.github.io/bookstore-automation-python/
+
 ## Stack
 
 - Playwright, pytest, pytest-playwright
@@ -56,7 +58,7 @@ uv run task allure-open
 | `allure-results/` | Raw results from the last test run (gitignored) |
 | `allure-report/` | Generated HTML report (gitignored) |
 
-Tests attach Allure labels via `allure_metadata(layer, owner)` — **Suites** groups by `layer` then test class name.
+Tests attach Allure labels via `allure_metadata(layer, suite, owner)` — **Suites** groups by `layer` (UI/API) then suite name, same as the JS project.
 
 ## Demo application
 

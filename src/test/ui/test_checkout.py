@@ -3,16 +3,16 @@
 import allure
 from playwright.sync_api import Page
 
-from src.main.common.annotations import allure_metadata
+from src.main.common.annotations import AllureLayer, allure_metadata, tms_link
 from src.main.ui.pages.catalog_page import CatalogPage
 from src.main.ui.steps.checkout_steps import CheckoutSteps
 
 
-@allure.feature("Checkout UI")
 class TestCheckout:
     def setup_method(self) -> None:
-        allure_metadata("UI")
+        allure_metadata(layer=AllureLayer.UI, suite="Checkout Flow")
 
+    @allure.title(f"{tms_link('C4001')} complete checkout and view order in list")
     def test_complete_checkout_flow(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         checkout_steps = CheckoutSteps(authenticated_page, base_url)

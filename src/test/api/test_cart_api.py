@@ -4,14 +4,14 @@ import allure
 
 from src.main.api.controllers.books_controller import BooksController
 from src.main.api.controllers.cart_controller import CartController
-from src.main.common.annotations import allure_metadata
+from src.main.common.annotations import AllureLayer, allure_metadata, tms_link
 
 
-@allure.feature("Cart API")
 class TestCartApi:
     def setup_method(self) -> None:
-        allure_metadata("API")
+        allure_metadata(layer=AllureLayer.API, suite="Cart API")
 
+    @allure.title(f"{tms_link('C6001')} POST /api/cart/items adds item to cart")
     def test_add_item_to_cart(
         self, cart_api: CartController, books_api: BooksController, auth_token: str
     ) -> None:
@@ -23,6 +23,7 @@ class TestCartApi:
             assert cart.items[0].book_id == "b1"
             assert cart.items[0].quantity == 1
 
+    @allure.title(f"{tms_link('C6002')} GET /api/cart returns current cart")
     def test_get_cart(self, cart_api: CartController, auth_token: str) -> None:
         with allure.step("Add items to cart"):
             cart_api.add_item("b1", 2)
@@ -35,6 +36,7 @@ class TestCartApi:
             assert len(cart.items) == 2
             assert cart.subtotal > 0
 
+    @allure.title(f"{tms_link('C6003')} PATCH /api/cart/items/:id updates quantity")
     def test_update_cart_item_quantity(self, cart_api: CartController, auth_token: str) -> None:
         with allure.step("Add book b3 to cart"):
             cart_api.add_item("b3", 1)
@@ -46,6 +48,7 @@ class TestCartApi:
             item = next(i for i in cart.items if i.book_id == "b3")
             assert item.quantity == 3
 
+    @allure.title(f"{tms_link('C6004')} DELETE /api/cart/items/:id removes item")
     def test_remove_cart_item(self, cart_api: CartController, auth_token: str) -> None:
         with allure.step("Add books to cart"):
             cart_api.add_item("b1", 1)
@@ -58,6 +61,7 @@ class TestCartApi:
             assert len(cart.items) == 1
             assert cart.items[0].book_id == "b3"
 
+    @allure.title(f"{tms_link('C6005')} POST /api/cart/items returns 400 when stock limit exceeded")
     def test_add_item_exceeding_stock_returns_400(
         self, cart_api: CartController, auth_token: str
     ) -> None:

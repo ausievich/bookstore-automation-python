@@ -3,18 +3,18 @@
 import allure
 from playwright.sync_api import Page
 
-from src.main.common.annotations import allure_metadata
+from src.main.common.annotations import AllureLayer, allure_metadata, tms_link
 from src.main.ui.pages.cart_page import CartPage
 from src.main.ui.pages.catalog_page import CatalogPage
 from src.main.ui.steps.cart_steps import CartSteps
 from src.main.ui.steps.catalog_steps import CatalogSteps
 
 
-@allure.feature("Cart UI")
 class TestShoppingCart:
     def setup_method(self) -> None:
-        allure_metadata("UI")
+        allure_metadata(layer=AllureLayer.UI, suite="Shopping Cart")
 
+    @allure.title(f"{tms_link('C3001')} add book updates cart counter")
     def test_add_book_updates_cart_counter(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         steps = CatalogSteps(authenticated_page, base_url)
@@ -28,6 +28,7 @@ class TestShoppingCart:
         with allure.step("Assert cart counter is 1"):
             steps.expect_cart_counter(1)
 
+    @allure.title(f"{tms_link('C3002')} multiple books in cart")
     def test_multiple_books_in_cart(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         cart_steps = CartSteps(authenticated_page, base_url)
@@ -41,6 +42,7 @@ class TestShoppingCart:
             cart_steps.open_cart()
             cart_steps.expect_items_count(2)
 
+    @allure.title(f"{tms_link('C3003')} remove book from cart")
     def test_remove_book_from_cart(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         cart_steps = CartSteps(authenticated_page, base_url)
@@ -57,6 +59,7 @@ class TestShoppingCart:
         with allure.step("Assert only 1 item remains"):
             cart_steps.expect_items_count(1)
 
+    @allure.title(f"{tms_link('C3004')} update quantity recalculates subtotal")
     def test_update_quantity_recalculates_subtotal(
         self, authenticated_page: Page, base_url: str
     ) -> None:
@@ -77,6 +80,7 @@ class TestShoppingCart:
         with allure.step("Assert subtotal reflects 2x price"):
             cart_steps.expect_subtotal_contains("37.98")
 
+    @allure.title(f"{tms_link('C3005')} empty cart message")
     def test_empty_cart_message(self, authenticated_page: Page, base_url: str) -> None:
         cart_steps = CartSteps(authenticated_page, base_url)
 

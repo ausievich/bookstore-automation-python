@@ -3,16 +3,16 @@
 import allure
 from playwright.sync_api import Page, expect
 
-from src.main.common.annotations import allure_metadata
+from src.main.common.annotations import AllureLayer, allure_metadata, tms_link
 from src.main.ui.pages.catalog_page import CatalogPage
 from src.main.ui.steps.catalog_steps import CatalogSteps
 
 
-@allure.feature("Catalog UI")
 class TestBookSearch:
     def setup_method(self) -> None:
-        allure_metadata("UI")
+        allure_metadata(layer=AllureLayer.UI, suite="Book Search & Filtering")
 
+    @allure.title(f"{tms_link('C2001')} search by title shows matching books")
     def test_search_by_title(self, authenticated_page: Page, base_url: str) -> None:
         steps = CatalogSteps(authenticated_page, base_url)
         page_obj = CatalogPage(authenticated_page, base_url)
@@ -29,6 +29,7 @@ class TestBookSearch:
             expect(titles).to_have_count(1)
             expect(titles.first).to_contain_text("Dune")
 
+    @allure.title(f"{tms_link('C2002')} filter by category")
     def test_filter_by_category(self, authenticated_page: Page, base_url: str) -> None:
         steps = CatalogSteps(authenticated_page, base_url)
         page_obj = CatalogPage(authenticated_page, base_url)
@@ -47,6 +48,7 @@ class TestBookSearch:
             for i in range(count):
                 expect(categories.nth(i)).to_have_text("Fiction")
 
+    @allure.title(f"{tms_link('C2003')} sort by price ascending")
     def test_sort_by_price_ascending(self, authenticated_page: Page, base_url: str) -> None:
         steps = CatalogSteps(authenticated_page, base_url)
         page_obj = CatalogPage(authenticated_page, base_url)
@@ -67,6 +69,7 @@ class TestBookSearch:
             ]
             assert prices == sorted(prices), f"Prices not sorted ascending: {prices}"
 
+    @allure.title(f"{tms_link('C2004')} no results message")
     def test_no_results_message(self, authenticated_page: Page, base_url: str) -> None:
         steps = CatalogSteps(authenticated_page, base_url)
 

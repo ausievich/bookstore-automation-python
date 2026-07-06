@@ -5,7 +5,7 @@ import allure
 from src.main.api.controllers.cart_controller import CartController
 from src.main.api.controllers.orders_controller import OrdersController
 from src.main.api.models.order import PaymentInfo, ShippingInfo
-from src.main.common.annotations import allure_metadata
+from src.main.common.annotations import AllureLayer, allure_metadata, tms_link
 
 SHIPPING = ShippingInfo(name="Test User", address="123 Main St", city="Testville", zip="12345")
 PAYMENT = PaymentInfo(cardLast4="4242")
@@ -15,11 +15,11 @@ def _setup_cart(cart_api: CartController) -> None:
     cart_api.add_item("b3", 1)
 
 
-@allure.feature("Orders API")
 class TestOrdersApi:
     def setup_method(self) -> None:
-        allure_metadata("API")
+        allure_metadata(layer=AllureLayer.API, suite="Orders API")
 
+    @allure.title(f"{tms_link('C7001')} POST /api/orders places order from cart")
     def test_create_order(
         self, cart_api: CartController, orders_api: OrdersController, auth_token: str
     ) -> None:
@@ -35,6 +35,7 @@ class TestOrdersApi:
             assert order.total > 0
             assert len(order.items) == 1
 
+    @allure.title(f"{tms_link('C7003')} GET /api/orders returns paginated list")
     def test_list_orders(
         self, cart_api: CartController, orders_api: OrdersController, auth_token: str
     ) -> None:
@@ -51,6 +52,7 @@ class TestOrdersApi:
             assert page.total == 2
             assert len(page.items) == 2
 
+    @allure.title(f"{tms_link('C7002')} GET /api/orders/:id returns order details")
     def test_get_order_by_id(
         self, cart_api: CartController, orders_api: OrdersController, auth_token: str
     ) -> None:
@@ -65,6 +67,7 @@ class TestOrdersApi:
             assert fetched.id == created.id
             assert fetched.status == "pending"
 
+    @allure.title(f"{tms_link('C7004')} order status transitions pending to confirmed to shipped")
     def test_update_order_status(
         self, cart_api: CartController, orders_api: OrdersController, auth_token: str
     ) -> None:
