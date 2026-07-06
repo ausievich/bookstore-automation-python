@@ -3,7 +3,7 @@
 from typing import Any
 
 from src.main.api.clients.http_client import HttpClient
-from src.main.api.models.order import OrderDto, OrdersPageDto, ShippingInfo, PaymentInfo
+from src.main.api.models.order import OrderDto, OrdersPageDto, PaymentInfo, ShippingInfo
 
 
 class OrdersController:

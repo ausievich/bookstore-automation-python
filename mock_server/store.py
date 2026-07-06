@@ -3,8 +3,7 @@
 from __future__ import annotations
 
 import time
-from copy import deepcopy
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 
@@ -67,12 +66,54 @@ class Order:
 
 
 SEED_BOOKS: list[dict[str, Any]] = [
-    {"id": "b1", "title": "Clean Code", "author": "Robert Martin", "category": "Technology", "price": 42.99, "stock": 10},
-    {"id": "b2", "title": "The Pragmatic Programmer", "author": "Hunt & Thomas", "category": "Technology", "price": 39.50, "stock": 8},
-    {"id": "b3", "title": "Dune", "author": "Frank Herbert", "category": "Fiction", "price": 18.99, "stock": 15},
-    {"id": "b4", "title": "Sapiens", "author": "Yuval Harari", "category": "History", "price": 22.00, "stock": 12},
-    {"id": "b5", "title": "A Brief History of Time", "author": "Stephen Hawking", "category": "Science", "price": 15.75, "stock": 6},
-    {"id": "b6", "title": "Neuromancer", "author": "William Gibson", "category": "Fiction", "price": 14.25, "stock": 0},
+    {
+        "id": "b1",
+        "title": "Clean Code",
+        "author": "Robert Martin",
+        "category": "Technology",
+        "price": 42.99,
+        "stock": 10,
+    },
+    {
+        "id": "b2",
+        "title": "The Pragmatic Programmer",
+        "author": "Hunt & Thomas",
+        "category": "Technology",
+        "price": 39.50,
+        "stock": 8,
+    },
+    {
+        "id": "b3",
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "category": "Fiction",
+        "price": 18.99,
+        "stock": 15,
+    },
+    {
+        "id": "b4",
+        "title": "Sapiens",
+        "author": "Yuval Harari",
+        "category": "History",
+        "price": 22.00,
+        "stock": 12,
+    },
+    {
+        "id": "b5",
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "category": "Science",
+        "price": 15.75,
+        "stock": 6,
+    },
+    {
+        "id": "b6",
+        "title": "Neuromancer",
+        "author": "William Gibson",
+        "category": "Fiction",
+        "price": 14.25,
+        "stock": 0,
+    },
 ]
 
 SEED_USERS: list[dict[str, Any]] = [
@@ -248,13 +289,15 @@ class BookstoreStore:
             book = self.get_book(ci.book_id)
             if book:
                 line_total = round(book.price * ci.quantity, 2)
-                items.append({
-                    "bookId": ci.book_id,
-                    "quantity": ci.quantity,
-                    "title": book.title,
-                    "price": book.price,
-                    "lineTotal": line_total,
-                })
+                items.append(
+                    {
+                        "bookId": ci.book_id,
+                        "quantity": ci.quantity,
+                        "title": book.title,
+                        "price": book.price,
+                        "lineTotal": line_total,
+                    }
+                )
         subtotal = round(sum(i["lineTotal"] for i in items), 2)
         return {"items": items, "subtotal": subtotal}
 
@@ -279,12 +322,14 @@ class BookstoreStore:
                 return f"Book {ci.book_id} not found"
             if ci.quantity > book.stock:
                 return f"Insufficient stock for '{book.title}'"
-            order_items.append(OrderItem(
-                book_id=ci.book_id,
-                title=book.title,
-                quantity=ci.quantity,
-                unit_price=book.price,
-            ))
+            order_items.append(
+                OrderItem(
+                    book_id=ci.book_id,
+                    title=book.title,
+                    quantity=ci.quantity,
+                    unit_price=book.price,
+                )
+            )
 
         # Decrement stock and clear cart
         for ci in cart:
@@ -298,6 +343,7 @@ class BookstoreStore:
         total = round(sum(i.unit_price * i.quantity for i in order_items), 2)
 
         import datetime
+
         created_at = datetime.datetime.utcnow().isoformat() + "Z"
 
         order = Order(

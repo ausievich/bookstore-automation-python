@@ -8,7 +8,7 @@ from typing import Any
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.staticfiles import StaticFiles
 
-from mock_server.store import Book, Order, store
+from mock_server.store import store
 
 app = FastAPI(title="Bookstore Mock Server")
 
@@ -18,6 +18,7 @@ DEMO_DIR = Path(__file__).parent.parent / "demo"
 # ------------------------------------------------------------------
 # Auth helpers
 # ------------------------------------------------------------------
+
 
 def get_token(request: Request) -> str | None:
     auth = request.headers.get("Authorization", "")
@@ -40,6 +41,7 @@ def require_auth(request: Request) -> str:
 # Health
 # ------------------------------------------------------------------
 
+
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -48,6 +50,7 @@ def health() -> dict[str, str]:
 # ------------------------------------------------------------------
 # Test helpers
 # ------------------------------------------------------------------
+
 
 @app.post("/api/test/reset", status_code=204)
 def reset_store() -> Response:
@@ -58,6 +61,7 @@ def reset_store() -> Response:
 # ------------------------------------------------------------------
 # Auth
 # ------------------------------------------------------------------
+
 
 @app.post("/api/auth/login")
 def login(body: dict[str, Any]) -> dict[str, Any]:
@@ -78,6 +82,7 @@ def login(body: dict[str, Any]) -> dict[str, Any]:
 # ------------------------------------------------------------------
 # Books
 # ------------------------------------------------------------------
+
 
 @app.get("/api/books")
 def list_books(
@@ -149,6 +154,7 @@ def delete_book(
 # Cart
 # ------------------------------------------------------------------
 
+
 @app.get("/api/cart")
 def get_cart(user_id: str = Depends(require_auth)) -> dict[str, Any]:
     return store.cart_details(user_id)
@@ -191,6 +197,7 @@ def remove_cart_item(
 # ------------------------------------------------------------------
 # Orders
 # ------------------------------------------------------------------
+
 
 @app.post("/api/orders", status_code=201)
 def create_order(

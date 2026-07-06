@@ -69,9 +69,7 @@ def main() -> None:
 
     if command == "open":
         if not REPORT_DIR.exists():
-            raise SystemExit(
-                f"No report at {REPORT_DIR}. Run: uv run task allure-gen"
-            )
+            raise SystemExit(f"No report at {REPORT_DIR}. Run: uv run task allure-gen")
         run_allure(["open", str(REPORT_DIR)])
         return
 

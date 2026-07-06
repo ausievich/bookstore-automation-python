@@ -13,9 +13,7 @@ class TestCheckout:
     def setup_method(self) -> None:
         allure_metadata("UI")
 
-    def test_complete_checkout_flow(
-        self, authenticated_page: Page, base_url: str
-    ) -> None:
+    def test_complete_checkout_flow(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         checkout_steps = CheckoutSteps(authenticated_page, base_url)
 

@@ -1,7 +1,6 @@
 """API tests: Books CRUD."""
 
 import allure
-import pytest
 
 from src.main.api.builders.book_builder import BookBuilder
 from src.main.api.controllers.books_controller import BooksController
@@ -71,9 +70,7 @@ class TestBooksCrud:
         payload = BookBuilder().build()
 
         with allure.step("Attempt to create book without auth token"):
-            response = books_api.client.post(
-                "/api/books", json=payload.model_dump()
-            )
+            response = books_api.client.post("/api/books", json=payload.model_dump())
 
         with allure.step("Assert 401 Unauthorized"):
             assert response.status_code == 401

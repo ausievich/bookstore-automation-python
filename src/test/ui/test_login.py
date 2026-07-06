@@ -1,7 +1,6 @@
 """UI tests: Login page."""
 
 import allure
-import pytest
 from playwright.sync_api import Page
 
 from src.main.common.annotations import allure_metadata
@@ -21,9 +20,7 @@ class TestLogin:
             steps.open_login()
 
         with allure.step("Submit valid credentials"):
-            steps.submit_credentials(
-                TestUsers.valid["email"], TestUsers.valid["password"]
-            )
+            steps.submit_credentials(TestUsers.valid["email"], TestUsers.valid["password"])
 
         with allure.step("Expect redirect to catalog"):
             steps.wait_for_catalog_redirect()

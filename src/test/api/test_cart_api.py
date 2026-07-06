@@ -35,9 +35,7 @@ class TestCartApi:
             assert len(cart.items) == 2
             assert cart.subtotal > 0
 
-    def test_update_cart_item_quantity(
-        self, cart_api: CartController, auth_token: str
-    ) -> None:
+    def test_update_cart_item_quantity(self, cart_api: CartController, auth_token: str) -> None:
         with allure.step("Add book b3 to cart"):
             cart_api.add_item("b3", 1)
 

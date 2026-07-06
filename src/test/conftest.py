@@ -14,7 +14,6 @@ from src.main.api.flows.auth_flow import AuthFlow
 from src.main.common.config.environment import Environment
 from src.main.common.constants.test_users import TestUsers
 
-
 # ---------------------------------------------------------------------------
 # Base URL
 # ---------------------------------------------------------------------------
@@ -31,7 +30,7 @@ def base_url() -> str:  # type: ignore[override]
 
 
 @pytest.fixture
-def http_client(base_url: str) -> "HttpClient":  # type: ignore[return]
+def http_client(base_url: str) -> HttpClient:  # type: ignore[return]
     client = HttpClient(base_url)
     yield client  # type: ignore[misc]
     client.close()
@@ -78,7 +77,7 @@ def orders_api(http_client: HttpClient) -> OrdersController:
 
 
 @pytest.fixture
-def auth_token(http_client: HttpClient, api_reset: None) -> "str":  # type: ignore[return]
+def auth_token(http_client: HttpClient, api_reset: None) -> str:  # type: ignore[return]
     flow = AuthFlow(http_client)
     token = flow.login_as_default_user()
     http_client.set_auth_token(token)

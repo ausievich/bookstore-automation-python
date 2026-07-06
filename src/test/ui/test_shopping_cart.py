@@ -1,7 +1,7 @@
 """UI tests: Shopping cart interactions."""
 
 import allure
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from src.main.common.annotations import allure_metadata
 from src.main.ui.pages.cart_page import CartPage
@@ -15,9 +15,7 @@ class TestShoppingCart:
     def setup_method(self) -> None:
         allure_metadata("UI")
 
-    def test_add_book_updates_cart_counter(
-        self, authenticated_page: Page, base_url: str
-    ) -> None:
+    def test_add_book_updates_cart_counter(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         steps = CatalogSteps(authenticated_page, base_url)
 
@@ -30,9 +28,7 @@ class TestShoppingCart:
         with allure.step("Assert cart counter is 1"):
             steps.expect_cart_counter(1)
 
-    def test_multiple_books_in_cart(
-        self, authenticated_page: Page, base_url: str
-    ) -> None:
+    def test_multiple_books_in_cart(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         cart_steps = CartSteps(authenticated_page, base_url)
 
@@ -45,9 +41,7 @@ class TestShoppingCart:
             cart_steps.open_cart()
             cart_steps.expect_items_count(2)
 
-    def test_remove_book_from_cart(
-        self, authenticated_page: Page, base_url: str
-    ) -> None:
+    def test_remove_book_from_cart(self, authenticated_page: Page, base_url: str) -> None:
         catalog = CatalogPage(authenticated_page, base_url)
         cart_steps = CartSteps(authenticated_page, base_url)
 
@@ -83,9 +77,7 @@ class TestShoppingCart:
         with allure.step("Assert subtotal reflects 2x price"):
             cart_steps.expect_subtotal_contains("37.98")
 
-    def test_empty_cart_message(
-        self, authenticated_page: Page, base_url: str
-    ) -> None:
+    def test_empty_cart_message(self, authenticated_page: Page, base_url: str) -> None:
         cart_steps = CartSteps(authenticated_page, base_url)
 
         with allure.step("Open cart without adding items"):

@@ -1,7 +1,6 @@
 """UI tests: Book search and filtering."""
 
 import allure
-import pytest
 from playwright.sync_api import Page, expect
 
 from src.main.common.annotations import allure_metadata
@@ -64,8 +63,7 @@ class TestBookSearch:
             count = price_locators.count()
             assert count > 1
             prices = [
-                float(price_locators.nth(i).inner_text().replace("$", ""))
-                for i in range(count)
+                float(price_locators.nth(i).inner_text().replace("$", "")) for i in range(count)
             ]
             assert prices == sorted(prices), f"Prices not sorted ascending: {prices}"
 
